@@ -27,7 +27,6 @@ const App = () => {
 
   return (
     <div>
-      <h1>[Some Title]</h1>
       <NewExpense />
       <Expenses expenseData={expense} />
     </div>
