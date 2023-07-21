@@ -4,11 +4,19 @@ import "./ExpenseForm.css"
 const ExpenseForm = () => {
 
   const [inputTitle, setInputTitle] = useState("")
-  const [inputAmount, setInputAmount] = useState()
-  const [inputDate, setInputDate] = useState()
+  const [inputAmount, setInputAmount] = useState("")
+  const [inputDate, setInputDate] = useState("")
 
   const handleTitleChange = (e) => {
     setInputTitle(e.target.value)
+
+    if(inputTitle.trim().length < 3) {
+      console.log(inputTitle)
+      console.log('Invalid')
+    } else {
+      console.log(inputTitle)
+      console.log('Valid')
+    }
   }
 
   const handleAmountChange = (e) => {
@@ -21,7 +29,7 @@ const ExpenseForm = () => {
 
   const userExpenseHandler = (e) => {
     e.preventDefault()
-    console.log("Working!")
+    console.log(`Title: ${inputTitle}\nAmount: ${inputAmount}\nDate: ${inputDate}`)
   }
 
   return (
@@ -29,18 +37,17 @@ const ExpenseForm = () => {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={handleTitleChange} />
+          <input type="text" onChange={handleTitleChange} required />
         </div>
 
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="number" mim="0.01" step="0.01" onChange={handleAmountChange} />
+          <input type="number" mim="0.01" step="0.01" onChange={handleAmountChange} required />
         </div>
 
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" min="2000-01-01" max="2049-12-31" onChange={handleDateChange} />
-          <label>{inputDate}</label>
+          <input type="date" min="2000-01-01" max="2049-12-31" onChange={handleDateChange} required />
         </div>
       </div>
 
