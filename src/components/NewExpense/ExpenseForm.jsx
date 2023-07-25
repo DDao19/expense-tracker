@@ -9,14 +9,6 @@ const ExpenseForm = () => {
 
   const handleTitleChange = (e) => {
     setInputTitle(e.target.value)
-
-    if(inputTitle.trim().length < 3) {
-      console.log(inputTitle)
-      console.log('Invalid')
-    } else {
-      console.log(inputTitle)
-      console.log('Valid')
-    }
   }
 
   const handleAmountChange = (e) => {
