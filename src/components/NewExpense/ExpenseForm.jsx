@@ -19,27 +19,35 @@ const ExpenseForm = () => {
     setInputDate(e.target.value)
   }
 
-  const userExpenseHandler = (e) => {
+  const userSubmitHandler = (e) => {
     e.preventDefault()
-    console.log(`Title: ${inputTitle}\nAmount: ${inputAmount}\nDate: ${inputDate}`)
+    const expenseData = {
+      title: inputTitle,
+      amount: inputAmount,
+      date: new Date(inputDate)
+    }
+    console.log(expenseData)
+    setInputTitle('')
+    setInputAmount('')
+    setInputDate('')
   }
 
   return (
-    <form onSubmit={userExpenseHandler}>
+    <form onSubmit={userSubmitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={handleTitleChange} required />
+          <input type="text" value={inputTitle} onChange={handleTitleChange} required />
         </div>
 
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="number" mim="0.01" step="0.01" onChange={handleAmountChange} required />
+          <input type="number" mim="0.01" step="0.01" value={inputAmount} onChange={handleAmountChange} required />
         </div>
 
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" min="2000-01-01" max="2049-12-31" onChange={handleDateChange} required />
+          <input type="date" min="2000-01-01" max="2049-12-31" value={inputDate} onChange={handleDateChange} required />
         </div>
       </div>
 
