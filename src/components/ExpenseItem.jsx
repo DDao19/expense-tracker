@@ -10,7 +10,6 @@ const ExpenseItem = ({ date, title, amount }) => {
   
   const changeTitleHandler = () => {
     setUpdatedTitle("Something")
-    console.log(updatedTitle)
   }
 
   return (
