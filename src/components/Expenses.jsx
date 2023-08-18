@@ -1,5 +1,6 @@
 import ExpenseItem from "./ExpenseItem"
 import Card from "./Card";
+import ExpensesFilter from "./ExpensesFilter";
 import "./Expenses.css"
 
 const Expenses = ({ expenseData }) => {
@@ -11,11 +12,14 @@ const Expenses = ({ expenseData }) => {
       );
     });
   };
-  
+  console.log(expenseData)
   return (
-    <Card className="expenses">
-      {differentExpense()}
-    </Card>
+    <div>
+      <Card className="expenses">
+      <ExpensesFilter />
+        {differentExpense()}
+      </Card>
+    </div>
   )
 }
 
