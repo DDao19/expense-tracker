@@ -12,7 +12,7 @@ const Expenses = ({ expenseData }) => {
       );
     });
   };
-  console.log(expenseData)
+  
   return (
     <div>
       <Card className="expenses">

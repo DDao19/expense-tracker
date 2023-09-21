@@ -2,11 +2,16 @@ import './ExpensesFilter.css'
 
 
 const ExpensesFilter = () => {
+
+  const handleFilterChange = (e) => {
+    console.log(e.target.value)
+  }
+
   return (
     <div className='expenses-filter'>
       <div className='expenses-filter__control'>
         <label>Filter by year</label>
-        <select defaultValue="-- Year --">
+        <select defaultValue="-- Year --" onChange={handleFilterChange}>
           <option value="-- Year --" disabled>-- Year --</option>
           <option value="2023">2023</option>
           <option value="2022">2022</option>
