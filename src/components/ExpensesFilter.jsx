@@ -1,10 +1,10 @@
 import './ExpensesFilter.css'
 
 
-const ExpensesFilter = () => {
-
+const ExpensesFilter = ({ onFilterChangeHandler }) => {
+  
   const handleFilterChange = (e) => {
-    console.log(e.target.value)
+    onFilterChangeHandler(e.target.value)
   }
 
   return (
