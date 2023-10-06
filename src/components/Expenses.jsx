@@ -7,7 +7,7 @@ import "./Expenses.css"
 const Expenses = ({ expenseData }) => {
   const [filteredYear, setFilteredYear] = useState('2020')
   
-  const differentExpense = () => {
+  const allExpenses = () => {
     return expenseData.map((data, i) => {
       return (
         <ExpenseItem key={i} date={data.date} title={data.title} amount={data.amount} />
@@ -23,7 +23,7 @@ const Expenses = ({ expenseData }) => {
     <div>
       <Card className="expenses">
         <ExpensesFilter onFilterChangeHandler={filterChangeHandler} />
-        {differentExpense()}
+        {allExpenses()}
       </Card>
     </div>
   )
